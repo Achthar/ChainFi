@@ -19,6 +19,9 @@ module.exports = {
       skipDryRun: true,
     },
   },
+  mocha: {
+    timeout: 10000000000
+ },
   contracts_directory: './src/contracts/',
   contracts_build_directory: './src/abis/',
   compilers: {
