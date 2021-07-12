@@ -189,11 +189,6 @@ class App extends Component {
               style={{ maxWidth: "600px" }}
             >
               <div className="content mr-auto ml-auto">
-                <a
-                  href="https://alphachain.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                ></a>
 
                 {content}
               </div>

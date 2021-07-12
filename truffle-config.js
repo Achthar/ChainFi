@@ -11,7 +11,10 @@ module.exports = {
     },
     live: {
       provider: () => {
-        return new HDWalletProvider(process.env.MNEMONIC, process.env.KOVAN_RPC_URL)
+        return new HDWalletProvider({mnemonic:{phrase:process.env.MNEMONIC}, 
+          providerOrUrl:process.env.ROPSTEN_RPC_URL,
+          numberOfAddresses: 1,
+          shareNonce: true,})
       },
       network_id: '*',
       // ~~Necessary due to https://github.com/trufflesuite/truffle/issues/1971~~
