@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import dai from "../dai.png";
 import chainlink from "../chainlink.png";
 import dappImage from "../dapp.png";
+import * as appStyle from "./App.css";
 
 class Main extends Component {
   render() {
     return (
       <div id="content" className="mt-3">
+        <link rel ="icon" href="https://quantresurgencemhy2069p5074.s3.eu-west-2.amazonaws.com/QRLogo.png"></link>
         <table className="table table-borderless text-muted text-center">
           <thead>
             <tr>
@@ -124,7 +126,7 @@ class Main extends Component {
                 type="submit"
                 className="btn btn-primary btn-block btn-lg"
               >
-                STAKE!
+                Stake
               </button>
             </form>
             <button
@@ -135,7 +137,7 @@ class Main extends Component {
                 this.props.unstakeTokens(this.props.tokenAddress);
               }}
             >
-              UN-STAKE...
+              Withdrawl
             </button>
           </div>
         </div>
