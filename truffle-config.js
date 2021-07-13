@@ -9,7 +9,7 @@ module.exports = {
       port: 7545,
       network_id: "*" // Match any network id
     },
-    live: {
+    ropsten: {
       provider: () => {
         return new HDWalletProvider({mnemonic:{phrase:process.env.MNEMONIC}, 
           providerOrUrl:process.env.ROPSTEN_RPC_URL,
@@ -20,10 +20,26 @@ module.exports = {
       // ~~Necessary due to https://github.com/trufflesuite/truffle/issues/1971~~
       // Necessary due to https://github.com/trufflesuite/truffle/issues/3008
       skipDryRun: true,
+      gas: 8000000,
+      gasPrice: 100000000000
+    },
+    kovan: {
+      provider: () => {
+        return new HDWalletProvider({mnemonic:{phrase:process.env.MNEMONIC}, 
+          providerOrUrl:process.env.KOVAN_RPC_URL,
+          numberOfAddresses: 1,
+          shareNonce: true,})
+      },
+      network_id: '*',
+      // ~~Necessary due to https://github.com/trufflesuite/truffle/issues/1971~~
+      // Necessary due to https://github.com/trufflesuite/truffle/issues/3008
+      skipDryRun: true,
+      gas: 8000000,
+      gasPrice: 100000000000
     },
   },
   mocha: {
-    timeout: 10000000000
+    timeout: 100000000000000
  },
   contracts_directory: './src/contracts/',
   contracts_build_directory: './src/abis/',
